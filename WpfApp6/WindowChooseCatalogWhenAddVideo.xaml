@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp6.WindowChooseCatalogWhenAddVideo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="Выберите каталог" Height="250" Width="275"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="LightGray" MouseDoubleClick="ClickDoubleMouse" Icon="Resources/Logo.jpg" Closing="AddAuthorOfVideo_Closing">
+        <Grid Background="Black">
+        <Border Background="Teal" CornerRadius="50" Visibility="Visible">
+            <Grid Margin="0,0,0,0">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Назначение автора" TextAlignment="Center" FontSize="22" FontWeight="ExtraBold" Height="30" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                    <TextBlock Text="Выберите каталог" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="20" FontWeight="ExtraBold" Foreground="Chartreuse"  Margin="0,20,0,0"/>
+                    <ComboBox DisplayMemberPath="Name" Name="CatalogNamesList" Margin="20,10,20,10"></ComboBox>
+                    <TextBlock Text="Выбрать видео" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="22" FontWeight="ExtraBold" MouseEnter="AddAuthorAddEnter" MouseLeave="AddAuthorAddLeave" Name="AddVideoButton" Foreground="White"  Margin="0,15,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

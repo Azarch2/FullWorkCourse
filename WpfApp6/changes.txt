@@ -1,0 +1,19 @@
+﻿1.0.0.7
+- force dependencies to be included in the nuget package
+
+1.0.0.5
+- Image wasn't disposed in GetImageThumbnail or GetVideoThumbnail
+
+1.0.0.4
+- added GetVideoInfo function to return the duration of a video and its width and height.
+
+1.0.0.3
+- allow position to be Percent or Time based using positionType property to allow for more accurate thumbnail frames
+- ResizeImage skip resize if source and destination sizes are the same
+
+1.0.0.2
+- fix GetImageExtensions() error causing some file types to fail to get thumbnails
+
+1.0.0.1
+- preserve AspectRatio is exposed as a property
+- support for public bool GetThumbnail(string filename, out Image thumbnail)

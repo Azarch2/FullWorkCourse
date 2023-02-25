@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp6.WindowAddPlaceOfVideo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Назначение места совершения" Height="350" Width="275" WindowStartupLocation="CenterScreen" Icon="Resources/Logo.jpg" ResizeMode="NoResize" Background="Teal" MouseDoubleClick="ClickDoubleMouse" Closing="AddPlaceOfVideo_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Border Background="Teal" CornerRadius="50"  Visibility="Visible">
+            <Grid Margin="0,0,0,0">
+                <TextBlock Text="Назначение места" TextAlignment="Center" FontSize="22" FontWeight="ExtraBold" Height="30" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Пейзаж" Height="50" FontSize="18" Foreground="White" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddPlaceTextBoxLandscape" Margin="10,50,10,0"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Страну" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddPlaceTextBoxCountry" VerticalAlignment="Top" Margin="10,100,10,0" Cursor="IBeam"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Город" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddPlaceTextBoxCity" VerticalAlignment="Top" Margin="10,150,10,0"/>
+                <TextBlock Text="Назначить" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="22" FontWeight="ExtraBold" MouseEnter="AddPlaceAddEnter" MouseLeave="AddPlaceAddLeave" Name="AddPlaceAddButton" Foreground="White" Margin="0,0,0,15" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

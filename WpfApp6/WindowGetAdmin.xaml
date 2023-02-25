@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp6.WindowGetAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="Окно получения прав администратора" Height="380" Width="550" MouseDoubleClick="ClickDoubleMouse" Closing="Close" Background="LightGray" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="Resources\Logo.jpg" WindowStartupLocation="CenterScreen">
+    <Grid Background="Black">
+        <Border Background="Teal" CornerRadius="50" Visibility="Visible">
+            <Grid>
+                <TextBlock Margin="10,9,10,277.4" Text="Здесь вы можете получить права администратора" TextAlignment="Center" FontSize="19" FontWeight="ExtraBold"/>
+                <TextBlock Margin="19,294,419,10.4" Text="Назад" TextAlignment="Center" FontSize="24" FontWeight="ExtraBold" MouseEnter="GetAdminBackEnter" MouseLeave="GetAdminBackLeave" Name="GetAdminBackButton" Foreground="White" />
+                <TextBox materialDesign:HintAssist.Hint="Введите секретный ключ" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,131,10,152.4" Name="GetAdminTextBoxKey"/>
+                <TextBlock Margin="142,238,150,67.4" Text="Проверить ключ" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold" MouseEnter="GetAdminCheckPasswordEnter" MouseLeave="GetAdminCheckPasswordLeave" Name="GetAdminCheckPassword" Foreground="White"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp6.WindowAuthorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Окно авторизации" Height="380" Width="550" MouseDoubleClick="ClickDoubleMouse" Closing="Close" Background="Teal" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="Resources\Logo.jpg" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="Black">
+    <Border Background="Teal" CornerRadius="50" Visibility="Visible">
+        <Grid>
+            <TextBlock Margin="115,9,107,277.4" Text="Окно авторизации" TextAlignment="Center" FontSize="32" FontWeight="ExtraBold"/>
+            <TextBlock Margin="115,236,107,69" Text="Авторизоваться" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold" MouseEnter="AuthTextEnter" MouseLeave="AuthTextLeave" Name="AuthAuthButton" Foreground="White"/>
+            <TextBlock Margin="0,297,362,10" Text="На главную" TextAlignment="Center" FontSize="22" FontWeight="ExtraBold" MouseEnter="AuthBackEnter" MouseLeave="AuthBackLeave" Name="AuthBackButton" Foreground="White" />
+            <TextBox materialDesign:HintAssist.Hint="Введите логин" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,78,10,205.4" Name="AuthTextBoxLogin"/>
+            <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10,150,10,133.4" Name="AuthTextBoxPassword"/>
+        </Grid>
+    </Border>
+        </Grid>
+</Window>

@@ -1,0 +1,120 @@
+﻿<Window x:Class="WpfApp6.WindowCatalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="Окно каталогов" Height="380" Width="600" MouseDoubleClick="ClickDoubleMouse" Closing="Close" Background="LightGray" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="Resources\Logo.jpg" WindowStartupLocation="CenterScreen">
+
+    <Grid Background="Black">
+        <Border  Background="Teal" CornerRadius="50" Visibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" VerticalAlignment="Bottom" Name="BackButton" Margin="30,10,30,3" HorizontalAlignment="Left" Text="Назад" TextAlignment="Center" FontSize="20" FontWeight="ExtraBold" MouseEnter="CatalogBackButtonEnter" MouseLeave="CatalogBackButtonLeave"  Foreground="White"/>
+                <TextBlock Grid.Row="1" VerticalAlignment="Bottom" Name="AddCatalogButton" Margin="30,10,30,3" HorizontalAlignment="Center" Text="Добавить каталог" TextAlignment="Center" FontSize="20" FontWeight="ExtraBold" MouseEnter="CataloAddButtonEnter" MouseLeave="CataloAddButtonLeave"  Foreground="White"/>
+                <Border Grid.Row="1"  CornerRadius="20"  BorderBrush="Black"  Margin="10,10,10,30"  BorderThickness="1"></Border>
+                <ListView Background="Transparent" ScrollViewer.CanContentScroll="False" Name="CatalogsListView" Grid.Row="1" Margin="10,0,10,20" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Focusable="False" Height="260" >
+                    <ListView.ItemContainerStyle>
+                        <Style>
+                            <Style.Triggers>
+                                <Trigger Property="Control.IsMouseOver" Value="True">
+                                    <Setter Property="Control.Background" Value="Transparent" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" Margin="0,-20,0,0"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Grid.Row="1"  Orientation="Vertical"  Margin="0,10,0,0">
+                                <Grid Width="542.5" Name="gridTestThisowAfterMe" Height="75" Margin="5,10,5,10">
+                                    <Grid.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="30"></Setter>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Border BorderBrush="Black" BorderThickness="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0 0" EndPoint="0.6 1">
+                                                <GradientStop Color="Aqua" Offset="0"></GradientStop>
+                                                <GradientStop Color="Azure" Offset="1"></GradientStop>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <Image ToolTip="Кликните два раза чтобы изменить имя каталога" Source="Resources/file.png" Height="50" Width="50" Margin="10,0,0,0" HorizontalAlignment="Left" MouseEnter="ChangeCatalogNameEnter" MouseLeave="ChangeCatalogNameLeave"></Image>
+                                    <TextBlock FontWeight="Heavy" Height="20" Width="120" Text="{Binding Path=TotalSize, StringFormat={}{0} КБ}" VerticalAlignment="Center" Margin="65,0,330,0"  FontSize="18"></TextBlock>
+                                    <Button Foreground="Black" Background="Aquamarine" Content="{Binding Name}" Width="200" Margin="20" Click="OpenCatalogClick">
+                                        <Button.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="15"></Setter>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                    <Button Foreground="Black" Background="MediumVioletRed" Content="Удалить" Click="RemoveCatalog" Margin="399,21,26,19">
+                                        <Button.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="15"></Setter>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Grid.Row="1" x:Name="InputBox" Visibility="Hidden">
+                    <Grid Background="Black" Opacity="0.5"/>
+                    <Border
+                        MinWidth="250"
+                        Background="Bisque" 
+                        BorderBrush="Black" 
+                        BorderThickness="1" 
+                        CornerRadius="0,55,0,55" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Margin="5" Text="Добавление каталога:" FontWeight="Bold" FontFamily="Cambria" />
+                            <TextBox materialDesign:HintAssist.Hint="Введите имя каталога" FontSize="16" MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button  Margin="10" Content="Назад" Background="DarkRed" Click="BackFromAddCatalog"/>
+                                <Button Margin="10" Content="Добавить" Click="AddCatalog"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="1" x:Name="InputChangeBox" Visibility="Hidden">
+                    <Grid Background="Black" Opacity="0.5"/>
+                    <Border
+                        MinWidth="250"
+                        Background="Bisque" 
+                        BorderBrush="Black" 
+                        BorderThickness="1" 
+                        CornerRadius="0,55,0,55" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock Margin="5" Text="Изменение имени каталога:" FontWeight="Bold" FontFamily="Cambria" />
+                            <TextBox materialDesign:HintAssist.Hint="Введите имя каталога" FontSize="16" MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="TextBoxChangeName"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Margin="10" Content="Назад" Background="DarkRed" Click="BackFromChangeCatalog"/>
+                                <Button Margin="10" Content="Изменить" Click="ChangeCatalog"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <TextBlock Text="Здесь вы можете выбрать каталог с видео" TextAlignment="Center" FontSize="20" FontWeight="ExtraBold"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

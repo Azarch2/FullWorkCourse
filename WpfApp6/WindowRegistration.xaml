@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp6.WindowRegistration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Окно регистрации" Height="380" Width="550" MouseDoubleClick="ClickDoubleMouse" Closing="Close" Background="Teal" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="Resources\Logo.jpg" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Border Background="Teal" CornerRadius="50" Visibility="Visible">
+            <Grid>
+                <TextBlock Margin="250,0,0,286.4" Text="Окно регистрации" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold"/>
+                <TextBlock Margin="115,236,107,69" Text="Зарегистрироваться" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold" MouseEnter="RegisterTextEnter" MouseLeave="RegisterTextLeave" Name="RegistrationRegisterButton" Foreground="White"/>
+                <TextBlock Margin="0,297,362,10" Text="На главную" TextAlignment="Center" FontSize="22" FontWeight="ExtraBold" MouseEnter="RegisterBackEnter" MouseLeave="RegisterBackLeave" Name="RegistrationBackButton" Foreground="White" />
+                <TextBox materialDesign:HintAssist.Hint="Введите логин" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,78,10,205.4" Name="RegistrationTextBoxLogin" Cursor="IBeam"/>
+                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10,150,10,133.4" Name="RegistrationTextBoxPassword"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите электронную почту" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,11,10,272.4" Name="RegistrationTextBoxEmail"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

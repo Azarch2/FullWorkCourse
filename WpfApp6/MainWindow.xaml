@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Общее окно" Height="380" Width="550" MouseDoubleClick="ClickDoubleMouse" ResizeMode="NoResize" Icon="Resources\Logo.jpg" Closing="Close" WindowStartupLocation="CenterScreen">
+    <Grid Background="Black">
+        <Border Background="Teal" CornerRadius="50" Visibility="Visible">
+            <Grid>
+                <TextBlock Width="200" Margin="172,28,172,277" Text="Здравствуйте" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold"/>
+                <TextBlock Margin="47,58,42,248" Text=" выберите, что хотите сделать!" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold"/>
+                <TextBlock Margin="111,108,111,182" Text="Зарегистрироваться" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold" MouseEnter="RegistrationMouseEnter" MouseLeave="RegistrationLeave" Name="RegisterButton" Foreground="White"/>
+                <TextBlock Margin="134,174,139,115" Text="Авторизоваться" TextAlignment="Center" FontSize="25" FontWeight="ExtraBold" MouseEnter="AuthMouseEnter" MouseLeave="AuthLeave" Name="AuthButton" Foreground="White"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

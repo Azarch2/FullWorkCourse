@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp6.WindowAddAuthorOfVideo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Назначение автора" Icon="Resources/Logo.jpg" Height="470" Width="275"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="LightGray" MouseDoubleClick="ClickDoubleMouse" Closing="AddAuthorOfVideo_Closing">
+
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+
+    </Window.Resources>
+
+    <Grid Background="Black">
+        <Border Background="Teal" CornerRadius="50"  Visibility="Visible">
+            <Grid Margin="0,0,0,0">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Назначение автора" TextAlignment="Center" FontSize="22" FontWeight="ExtraBold" Height="30" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Имя" Height="50" FontSize="18" Foreground="White" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxName" Margin="10,-10,5,5" Cursor="IBeam"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Фамилию" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxSurname" VerticalAlignment="Top" Margin="10,-5,5,5"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Страну" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxCountry" VerticalAlignment="Top" Margin="10,-5,5,5"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Город" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxCity" VerticalAlignment="Top" Margin="10,-5,5,5" Cursor="IBeam"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Улицу" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxStreet" VerticalAlignment="Top" Margin="10,-5,5,5"  Cursor="IBeam"/>
+                <TextBox materialDesign:HintAssist.Hint="Введите Дом" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxHouse" VerticalAlignment="Top" Margin="10,-5,5,5" />
+                <TextBox materialDesign:HintAssist.Hint="Введите Электронную почту" Height="50" FontSize="18" Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Name="AddAuthorTextBoxEmail" VerticalAlignment="Top" Margin="10,-5,5,5" Cursor="IBeam"/>
+                <TextBlock Text="Назначить" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="22" FontWeight="ExtraBold" MouseEnter="AddAuthorAddEnter" MouseLeave="AddAuthorAddLeave" Name="AddAuthorAddButton" Foreground="White"  Margin="0,15,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

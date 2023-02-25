@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp6.WindowVideoPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+         MouseDoubleClick="MouseEnter"  KeyUp="backToPreviousIcon" WindowState="Maximized" Closing="Close" Title="Проигрыватель видео"  Width="1440" Background="Teal" WindowStyle="None" Icon="Resources\Logo.jpg" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <MediaElement LoadedBehavior="Manual" UnloadedBehavior="Manual" Name="PleerMedia"></MediaElement>
+        <StackPanel Visibility="Hidden" Name="StackPanelWithElements" Height="100" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <Button Click="backFromVideoPlayer" Height="90" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="10,5,5,5">
+                <Image Source="Resources/backButtonImage.png"></Image>
+            </Button>
+            <Button Click="stopThisVideo" Height="90" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="10,5,5,5">
+                <Image Source="Resources/stopButtonImage.png"></Image>
+            </Button>
+            <Slider MouseDown="ChangeValueOfVideoSlider" Name="VideoSlider" Foreground="Aquamarine" Width="840" VerticalAlignment="Center"></Slider>
+            <Button Click="continueVideoPlayer" Height="80" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="10,5,5,5">
+                <Image Source="Resources/continueButtonImage.png"></Image>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
